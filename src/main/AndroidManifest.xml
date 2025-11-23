@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution">
+
+    <!-- ✅ Needed for VPN + network access -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- ✅ Dynamic feature declaration -->
+    <dist:module
+        dist:onDemand="true"
+        dist:title="@string/mommastealth_title"
+        dist:instant="false">
+        <dist:fusing dist:include="true" />
+    </dist:module>
+
+    <application>
+        <activity
+            android:name="com.airnettie.mobile.child.MainActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoDisplay">
+
+            <!-- ✅ Custom scheme deep link (nettielink://child/link) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="nettielink"
+                    android:host="child"
+                    android:pathPrefix="/link" />
+            </intent-filter>
+
+            <!-- ✅ Browser-safe fallback (https://airnettie.github.io/link) -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="airnettie.github.io"
+                    android:pathPrefix="/link" />
+            </intent-filter>
+        </activity>
+
+        <!-- ✅ Core background services -->
+        <service android:name="com.airnettie.mobile.child.ChildSyncService" android:exported="false" />
+        <service android:name="com.airnettie.mobile.child.FeelScopeService" android:exported="false" />
+
+        <!-- ✅ Platform control receiver -->
+        <receiver android:name="com.airnettie.mobile.child.PlatformControlReceiver" android:exported="false" />
+
+        <!-- ✅ SafeScope VPN service -->
+        <service
+            android:name="com.airnettie.mobile.child.SafeScopeVpnService"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:exported="true" />
+    </application>
+
+</manifest>

@@ -1,0 +1,28 @@
+﻿# Android / IntelliJ / Gradle
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Gradle Wrapper
+gradle-wrapper.jar
+
+# Signing files
+*.jks
+*.keystore
+
+# Compiled outputs
+*.apk
+*.ap_
+*.aab
+
+# Kotlin daemon
+.kotlin_module
+
+# Misc
+*.log
