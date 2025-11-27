@@ -210,7 +210,7 @@
     const downloadUrl = `https://github.com/${githubUser}/${githubRepo}/releases/latest/download/mommastealth-release.apk`;
 
     // Deep link URL that will be opened after APK installation (ONLY token - no guardianId!)
-    const deepLinkUrl = `nettielink://child/link?token=${token}`;
+    const deepLinkUrl = `https://coreyd84.github.io/mommastealth/child/?token=${token}`;
 
     document.getElementById('downloadBtn').addEventListener('click', function(e) {
       e.preventDefault();

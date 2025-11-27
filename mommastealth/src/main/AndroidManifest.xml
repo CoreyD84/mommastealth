@@ -49,7 +49,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="coreyd84.github.io" android:pathPrefix="/mommastealth/link" />
+                <data android:scheme="https" android:host="coreyd84.github.io" android:pathPrefix="/mommastealth/child" />
             </intent-filter>
         </activity>
 
