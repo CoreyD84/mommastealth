@@ -220,7 +220,7 @@ class ChildLinkActivity : AppCompatActivity() {
 
             // Store under guardian's linked children
             val childRef = FirebaseDatabase.getInstance()
-                .getReference("linked_children/$guardianId/$childId")
+                .getReference("guardianLinks/$guardianId/linkedChildren/$childId")
 
             childRef.updateChildren(childData).addOnSuccessListener {
                 // Store guardian ID in child's local preferences
@@ -251,7 +251,7 @@ class ChildLinkActivity : AppCompatActivity() {
             return
         }
 
-        val ref = FirebaseDatabase.getInstance().getReference("linked_children/$householdId/$childId")
+        val ref = FirebaseDatabase.getInstance().getReference("guardianLinks/$householdId/linkedChildren/$childId")
 
         val nickname = Build.MODEL ?: "Child Device"
         val lastSeen = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

