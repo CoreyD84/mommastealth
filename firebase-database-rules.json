@@ -1,0 +1,481 @@
+{
+  "rules": {
+
+    // ========================================
+    // LINKING TOKENS - One-time tokens for QR code linking
+    // ========================================
+    "linkingTokens": {
+      "$token": {
+        ".read": "auth != null",  // Any authenticated user can read to validate token
+        ".write": "auth != null",  // Guardian creates token, child marks it as used
+        ".validate": "newData.hasChildren(['guardianId', 'timestamp', 'expiresAt', 'used'])",
+        "guardianId": {
+          ".validate": "newData.isString()"
+        },
+        "timestamp": {
+          ".validate": "newData.isNumber()"
+        },
+        "expiresAt": {
+          ".validate": "newData.isNumber()"
+        },
+        "used": {
+          ".validate": "newData.isBoolean()"
+        }
+      }
+    },
+
+    // ========================================
+    // GUARDIAN LINKS - Core linking structure
+    // ========================================
+    "guardianLinks": {
+      "$guardianId": {
+
+        // Pending tokens for QR code linking (temporary, expires after use)
+        "pendingTokens": {
+          "$token": {
+            ".read": true,  // Child app needs to read token to validate
+            ".write": "auth != null && auth.uid == $guardianId",  // Only guardian can create tokens
+            ".validate": "newData.hasChildren(['timestamp', 'expiresAt'])"
+          }
+        },
+
+        // Linked children list
+        "linkedChildren": {
+          "$childId": {
+            ".read": "auth != null && auth.uid == $guardianId",  // Guardian can read their linked children
+            ".write": "auth != null",  // Any authenticated user can write (child uses anonymous auth)
+            ".validate": "newData.hasChildren(['linkedAt', 'deviceInfo'])",
+            "linkedAt": {
+              ".validate": "newData.isNumber()"
+            },
+            "deviceInfo": {
+              ".validate": "newData.hasChildren(['model', 'os'])"
+            }
+          }
+        },
+
+        // Child profiles (name, age, etc.)
+        "childProfiles": {
+          "$childId": {
+            ".read": "auth != null && auth.uid == $guardianId",
+            ".write": "auth != null && (auth.uid == $guardianId || auth.uid == $childId)",
+            "lastSeen": {
+              ".validate": "newData.isNumber()"
+            }
+          }
+        },
+
+        // Location tracking
+        "location": {
+          "$childId": {
+            ".read": "auth != null && auth.uid == $guardianId",  // Only guardian can read location
+            ".write": "auth != null && auth.uid == $childId",  // Only child device can write location
+            ".validate": "newData.hasChildren(['latitude', 'longitude', 'timestamp'])",
+            "latitude": {
+              ".validate": "newData.isNumber() && newData.val() >= -90 && newData.val() <= 90"
+            },
+            "longitude": {
+              ".validate": "newData.isNumber() && newData.val() >= -180 && newData.val() <= 180"
+            },
+            "timestamp": {
+              ".validate": "newData.isNumber()"
+            }
+          }
+        },
+
+        // SafeScope VPN toggle
+        "safeScope": {
+          "$childId": {
+            ".read": "auth != null && (auth.uid == $guardianId || auth.uid == $childId)",
+            ".write": "auth != null && auth.uid == $guardianId",  // Only guardian can toggle
+            ".validate": "newData.isBoolean()"
+          }
+        },
+
+        // Platform controls (Messenger, Discord, etc.)
+        "platformControls": {
+          "$childId": {
+            ".read": "auth != null && (auth.uid == $guardianId || auth.uid == $childId)",
+            ".write": "auth != null && auth.uid == $guardianId",  // Only guardian can toggle platforms
+            "$platform": {
+              ".validate": "newData.isBoolean()"
+            }
+          }
+        },
+
+        // Flags for critical detections
+        "flags": {
+          "$childId": {
+            "$caseId": {
+              ".read": "auth != null && auth.uid == $guardianId",
+              ".write": "auth != null && auth.uid == $childId",  // Child device writes flags
+              ".validate": "newData.hasChildren(['severity', 'message', 'timestamp'])"
+            }
+          }
+        },
+
+        // Mascot mood tracking
+        "mascotMood": {
+          "$childId": {
+            ".read": "auth != null && auth.uid == $guardianId",
+            ".write": "auth != null && (auth.uid == $guardianId || auth.uid == $childId)"
+          }
+        }
+      }
+    },
+
+    // ========================================
+    // SAFESCOPE - VPN toggle controls
+    // ========================================
+    "safescope": {
+      "toggles": {
+        "$guardianId": {
+          "$childId": {
+            ".read": "auth != null && (auth.uid == $guardianId || auth.uid == $childId)",
+            ".write": "auth != null",  // Allow authenticated users to write (for initial setup)
+            ".validate": "newData.isBoolean()"
+          }
+        }
+      }
+    },
+
+    // ========================================
+    // FEELSCOPE - Message monitoring & detections
+    // ========================================
+    "feelscope": {
+
+      // Detections (text-based threats)
+      "detections": {
+        "$guardianId": {
+          "$childId": {
+            "$detectionId": {
+              ".read": "auth != null && auth.uid == $guardianId",
+              ".write": "auth != null && auth.uid == $childId",  // Child device writes detections
+              ".validate": "newData.hasChildren(['message', 'matchedPhrases', 'severity', 'timestamp'])"
+            }
+          }
+        }
+      },
+
+      // Emoji detections
+      "emojis": {
+        "$guardianId": {
+          "$childId": {
+            "$emojiId": {
+              ".read": "auth != null && auth.uid == $guardianId",
+              ".write": "auth != null && auth.uid == $childId",
+              ".validate": "newData.hasChildren(['message', 'matchedPhrases', 'timestamp'])"
+            }
+          }
+        }
+      },
+
+      // Household-based detections (alternative path)
+      "households": {
+        "$householdId": {
+          "detections": {
+            "$childId": {
+              "$detectionId": {
+                ".read": "auth != null",  // Any authenticated user in household
+                ".write": "auth != null"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    // ========================================
+    // FLAGS - Critical alerts
+    // ========================================
+    "flags": {
+      "$guardianId": {
+        "$childId": {
+          "$caseId": {
+            ".read": "auth != null && auth.uid == $guardianId",
+            ".write": "auth != null && auth.uid == $childId",
+            ".validate": "newData.hasChildren(['severity', 'message', 'timestamp'])"
+          }
+        }
+      }
+    },
+
+    // ========================================
+    // CONSENT LOGS - Legal compliance
+    // ========================================
+    "consent_logs": {
+      "$householdId": {
+        "$guardianId": {
+          "$consentId": {
+            ".read": "auth != null && auth.uid == $guardianId",
+            ".write": "auth != null && auth.uid == $guardianId",
+            ".validate": "newData.hasChildren(['timestamp', 'consentGiven', 'ipAddress'])"
+          }
+        }
+      }
+    },
+
+    // ========================================
+    // CONSENT STATUS - Current consent state
+    // ========================================
+    "consent_status": {
+      "$householdId": {
+        "$guardianId": {
+          ".read": "auth != null && auth.uid == $guardianId",
+          ".write": "auth != null && auth.uid == $guardianId"
+        }
+      }
+    },
+
+    // ========================================
+    // GUARDIAN PROFILES
+    // ========================================
+    "guardian_profiles": {
+      "$guardianId": {
+        ".read": "auth != null && auth.uid == $guardianId",
+        ".write": "auth != null && auth.uid == $guardianId",
+        "consent": {
+          "$childId": {
+            ".read": "auth != null && auth.uid == $guardianId",
+            ".write": "auth != null && auth.uid == $guardianId"
+          }
+        }
+      }
+    },
+
+    // ========================================
+    // CHILD PROFILES
+    // ========================================
+    "childProfiles": {
+      "$childId": {
+        ".read": "auth != null",  // Guardian needs to read during linking
+        ".write": "auth != null"
+      }
+    },
+
+    // ========================================
+    // LINKED CHILDREN (alternative path)
+    // ========================================
+    "linked_children": {
+      "$householdId": {
+        "$childId": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+        }
+      }
+    },
+
+    // ========================================
+    // LOCATION (alternative path)
+    // ========================================
+    "location": {
+      "$householdId": {
+        "$childId": {
+          ".read": "auth != null",
+          ".write": "auth != null",
+          ".validate": "newData.hasChildren(['latitude', 'longitude', 'timestamp'])"
+        }
+      }
+    },
+
+    // ========================================
+    // MASCOT MOOD (alternative path)
+    // ========================================
+    "mascotMood": {
+      "$householdId": {
+        "$childId": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+        }
+      }
+    },
+
+    // ========================================
+    // SMS LOGS
+    // ========================================
+    "sms_logs": {
+      "$householdId": {
+        "$childId": {
+          "messages": {
+            "$messageId": {
+              ".read": "auth != null",
+              ".write": "auth != null"
+            }
+          }
+        }
+      }
+    },
+
+    // ========================================
+    // FLAGGED SMS
+    // ========================================
+    "flaggedSMS": {
+      "$childId": {
+        "$messageId": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+        }
+      }
+    },
+
+    // ========================================
+    // FLAGGED MESSAGES
+    // ========================================
+    "flagged_messages": {
+      "$householdId": {
+        "$childId": {
+          "$messageId": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+          }
+        }
+      }
+    },
+
+    // ========================================
+    // LOGS - System and event logs
+    // ========================================
+    "logs": {
+      "$guardianId": {
+        "$childId": {
+          "$logId": {
+            ".read": "auth != null && auth.uid == $guardianId",
+            ".write": "auth != null && auth.uid == $childId"
+          }
+        }
+      },
+      "system": {
+        "$uid": {
+          "$logId": {
+            ".read": "auth != null && auth.uid == $uid",
+            ".write": "auth != null && auth.uid == $uid"
+          }
+        }
+      }
+    },
+
+    // ========================================
+    // EMOTIONAL PATTERNS - Threat detection patterns
+    // ========================================
+    "emotion_sadness": {
+      ".read": true,  // All devices need to read patterns
+      ".write": false  // Only admin can write (via Firebase Console)
+    },
+    "emotion_anger": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_anxiety": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_distress": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_fear": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_isolation": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_support": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_sadness_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_anger_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_fear_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_isolation_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "emotion_support_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_bullying": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_grooming": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_manipulation": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_predatory": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_self_harm": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_suicidal_ideation": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_physical": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_blackmail": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_coercion": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_emotional_blackmail": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_psychological_pressure": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_bullying_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_grooming_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_manipulation_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_secrecy_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_escalation_emojis": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_codes": {
+      ".read": true,
+      ".write": false
+    },
+    "threat_parental": {
+      ".read": true,
+      ".write": false
+    }
+  }
+}

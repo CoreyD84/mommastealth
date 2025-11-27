@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml",
+        "source": "com.airnettie.mobile.safescope-appcompat-1.6.1-32:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml",
+        "source": "com.airnettie.mobile.safescope-appcompat-1.6.1-32:/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml",
+        "source": "com.airnettie.mobile.safescope-appcompat-1.6.1-32:/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/interpolator/fast_out_slow_in.xml",
+        "source": "com.airnettie.mobile.safescope-appcompat-1.6.1-32:/interpolator/fast_out_slow_in.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/interpolator/mtrl_linear.xml",
+        "source": "com.airnettie.mobile.safescope-material-1.12.0-17:/interpolator/mtrl_linear.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_1.xml",
+        "source": "com.airnettie.mobile.safescope-appcompat-1.6.1-32:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_1.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml",
+        "source": "com.airnettie.mobile.safescope-appcompat-1.6.1-32:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_0.xml",
+        "source": "com.airnettie.mobile.safescope-appcompat-1.6.1-32:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_0.xml"
+    }
+]

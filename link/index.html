@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MommaStealth - Child Device Setup</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    h1 {
+      color: #667eea;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .step {
+      background: #f7f9fc;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .step-number {
+      display: inline-block;
+      background: #667eea;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .step-title {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .step-description {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .download-btn:active {
+      transform: translateY(0);
+    }
+
+    .icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .warning {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .warning-title {
+      font-weight: 600;
+      color: #856404;
+      margin-bottom: 5px;
+    }
+
+    .warning-text {
+      color: #856404;
+      font-size: 14px;
+    }
+
+    .loading {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #667eea;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">📱</div>
+    <h1>MommaStealth Setup</h1>
+    <p class="subtitle">Child Device Configuration</p>
+
+    <div class="step">
+      <div class="step-title">
+        <span class="step-number">1</span>
+        Download the App
+      </div>
+      <div class="step-description">
+        Click the button below to download the MommaStealth app to this device.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        <span class="step-number">2</span>
+        Enable Unknown Sources
+      </div>
+      <div class="step-description">
+        Go to Settings → Security → Enable "Install from Unknown Sources" to allow the installation.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        <span class="step-number">3</span>
+        Install & Link
+      </div>
+      <div class="step-description">
+        Install the downloaded APK. The app will automatically link to the guardian device.
+      </div>
+    </div>
+
+    <a href="#" id="downloadBtn" class="download-btn">
+      📥 Download MommaStealth
+    </a>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p style="margin-top: 10px; color: #666;">Preparing download...</p>
+    </div>
+
+    <div class="warning">
+      <div class="warning-title">⚠️ Important</div>
+      <div class="warning-text">
+        This app requires location, accessibility, and VPN permissions to function properly.
+        Grant all requested permissions during setup.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+
+    // GitHub repository info - UPDATE THIS WITH YOUR ACTUAL GITHUB USERNAME/REPO
+    const githubUser = 'coreyd84';
+    const githubRepo = 'mommastealth';
+    const downloadUrl = `https://github.com/${githubUser}/${githubRepo}/releases/latest/download/mommastealth-release.apk`;
+
+    // Deep link URL that will be opened after APK installation (ONLY token - no guardianId!)
+    const deepLinkUrl = `nettielink://child/link?token=${token}`;
+
+    document.getElementById('downloadBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Show loading
+      document.getElementById('loading').style.display = 'block';
+      this.style.display = 'none';
+
+      // Store the token in localStorage for the app to retrieve
+      if (token) {
+        localStorage.setItem('nettie_token', token);
+      }
+
+      // Start download
+      setTimeout(() => {
+        window.location.href = downloadUrl;
+
+        // After download starts, try to open the deep link
+        setTimeout(() => {
+          window.location.href = deepLinkUrl;
+        }, 2000);
+
+        // Reset UI
+        setTimeout(() => {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('downloadBtn').style.display = 'inline-block';
+        }, 3000);
+      }, 500);
+    });
+
+    // If the app is already installed, try to open it directly
+    if (token) {
+      // Try to open the app via deep link
+      setTimeout(() => {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = deepLinkUrl;
+        document.body.appendChild(iframe);
+
+        // If app doesn't open in 2 seconds, assume it's not installed
+        setTimeout(() => {
+          document.body.removeChild(iframe);
+        }, 2000);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

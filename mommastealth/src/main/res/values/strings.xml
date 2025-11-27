@@ -1,0 +1,13 @@
+<resources>
+    <!-- App name -->
+    <string name="app_name">Momma Stealth</string>
+
+    <!-- Accessibility service label and description -->
+    <string name="app_blocker_label">Nettie App Blocker</string>
+    <string name="app_blocker_description">
+        Blocks Messenger, Roblox, TikTok, and Discord when guardian toggles are off.
+    </string>
+
+    <!-- FeelScope service description -->
+    <string name="feelscope_description">FeelScope monitors messages in real-time to detect signs of grooming, bullying, emotional distress, and predatory behavior to keep your child safe.</string>
+</resources>

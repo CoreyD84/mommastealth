@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/layout-sw600dp-v13/mtrl_layout_snackbar.xml",
+        "source": "com.airnettie.mobile.safescope-material-1.12.0-17:/layout-sw600dp-v13/mtrl_layout_snackbar.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "com.airnettie.mobile.safescope-material-1.12.0-17:/layout-sw600dp-v13/design_layout_snackbar.xml"
+    }
+]

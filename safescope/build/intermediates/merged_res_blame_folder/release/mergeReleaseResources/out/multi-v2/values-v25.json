@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.airnettie.mobile.safescope-mergeReleaseResources-1:/values-v25/values-v25.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\glass\\.gradle\\caches\\8.13\\transforms\\cc424b7576d4e26213a4ae157188ad1a\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.airnettie.mobile.safescope-release-3:/values-v25/values-v25.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\glass\\.gradle\\caches\\8.13\\transforms\\cc424b7576d4e26213a4ae157188ad1a\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        }
+    ]
+}

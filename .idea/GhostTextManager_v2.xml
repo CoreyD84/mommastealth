@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GhostTextManager">
+    <option name="inputs">
+      <map>
+        <entry key="&quot;C:\Users\glass\momma-keystore.jks&quot;">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764176260246" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="# Set for current session&#10;$env:KEYSTORE_PASSWORD = &quot;Allen6516!&quot;&#10;$env:KEY_PASSWORD = &quot;Allen6516!&quot;&#10;$env:KEY_ALIAS = &quot;mommaKey&quot;  # or your actual alias if different">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764176384844" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="Error PERMISSION DENIED: Permission denied">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764201538275" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="Error saving rules - Line 438: Unexpected EOF.">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764201957705" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="Execution failed for task ':app:validateSigningRelease'.&#10;&gt; Keystore file 'C:\AndroidProjects\MommaMobileReborn\daemon\8.13\&quot;C:\Users\glass\momma-keystore.jks&quot;' not found for signing config 'externalOverride'.&#10;&#10;* Try:&#10;&gt; Run with --stacktrace option to get the stack trace.&#10;&gt; Run with --info or --debug option to get more log output.&#10;&gt; Run with --scan to get full insights.&#10;&gt; Get more help at https://help.gradle.org.&#10;failed&#10;Download info&#10;:app:validateSigningRelease&#10;Keystore file 'C:\AndroidProjects\MommaMobileReborn\daemon\8.13\&quot;C:\Users\glass\momma-keystore.jks&quot;' not found for signing config 'externalOverride'&#10;:app:compileReleaseKotlin&#10;ChildLinkActivity.kt&#10;Annotation 'androidx.camera.core.ExperimentalGetImage' is not annotated with '@&lt;file_name&gt;&#10;RecentDetectionsActivities.kt&#10;'static field FLAG_FULLSCREEN: Int' is deprecated. Deprecated in Java.&#10;'static field FLAG_FULLSCREEN: Int' is deprecated. Deprecated in Java.">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764225854438" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="Keystore file 'C:\AndroidProjects\MommaMobileReborn\daemon\8.13\&quot;C:\Users\glass\momma-keystore.jks&quot;' not found for signing config 'externalOverride'">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764277848071" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="PS C:\Dev\MommaNettie_New&gt;&#10;PS C:\Dev\MommaNettie_New&gt; $env:KEYSTORE_PATH = &quot;C:/Users/glass/momma-keystore.jks&quot;&#10;PS C:\Dev\MommaNettie_New&gt; $env:KEYSTORE_PASSWORD = &quot;Allen6516!&quot;&#10;PS C:\Dev\MommaNettie_New&gt; $env:KEY_ALIAS = &quot;mommaKey&quot;&#10;PS C:\Dev\MommaNettie_New&gt; $env:KEY_PASSWORD = &quot; Allen6516!&quot;&#10;PS C:\Dev\MommaNettie_New&gt; ./gradlew :mommastealth:assembleRelease&#10;Starting a Gradle Daemon, 1 incompatible and 1 stopped Daemons could not be reused, use --status for details&#10;&#10;&gt; Configure project :mommastealth&#10;w: file:///C:/Dev/MommaNettie_New/mommastealth/build.gradle.kts:79:9: 'jvmTarget: String' is deprecated. Please migrate to the compilerOptions DSL. More details are here: https://kotl.in/u1r8ln&#10;&#10;The Kotlin Gradle plugin was loaded multiple times in different subprojects, which is not supported and may break the build.&#10;This might happen in subprojects that apply the Kotlin plugins with the Gradle 'plugins { ... }' DSL if they specify explicit versions, even if the versions are equal.&#10;Please add the Kotlin plugin to the common parent project or the root project, then remove the versions in the subprojects.&#10;If the parent project does not need the plugin, add 'apply false' to the plugin line.&#10;See: https://docs.gradle.org/current/userguide/plugins.html#sec:subprojects_plugins_dsl&#10;The Kotlin plugin was loaded in the following projects: ':app', ':safescope'&#10;&#10;&gt; Task :mommastealth:packageRelease FAILED&#10;w: Detected multiple Kotlin daemon sessions at&#10;&#10;FAILURE: Build failed with an exception.&#10;&#10;* What went wrong:&#10;Execution failed for task ':mommastealth:packageRelease'.&#10;&gt; A failure occurred while executing com.android.build.gradle.tasks.PackageAndroidArtifact$IncrementalSplitterRunnable&#10;   &gt; com.android.ide.common.signing.KeytoolException: Failed to read key mommaKey from store &quot;C:\Users\glass\momma-keystore.jks&quot;: Get Key failed: Given final block not properly padded. Such issues can arise if a bad key is used during decryption.&#10;&#10;* Try:&#10;&gt; Run with --stacktrace option to get the stack trace.&#10;&gt; Run with --info or --debug option to get more log output.&#10;&gt; Run with --scan to get full insights.&#10;&gt; Get more help at https://help.gradle.org.&#10;&#10;BUILD FAILED in 3m 18s&#10;82 actionable tasks: 51 executed, 31 up-to-date&#10;0 was unexpected at this time.&#10;PS C:\Dev\MommaNettie_New&gt;">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764227503438" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="a new code i scan and it pops up when i click on the link i get fro scan">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764275522574" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="are all the features i designed working properly?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764174247332" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="awesome thank you">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764197871692" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="can we fix it?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764226670011" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="can you  give me a powershell command to download &quot;C:\Dev\MommaNettie_New\app\release\app-release.apk&quot; to my phone?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764178186014" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="can you fix it and send the whole thing back to me?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764205882111" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="can you get my project together and run .\gradlew :app:assembleRelease">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764165063883" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="can you give me the entire rules">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764238625839" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="can you help me to update my rules in my firebase real time database?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764175251622" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="can you update the val redirectUrl to https://github.com/CoreyD84/mommastealth/releases/download/v1/mommastealth-release.apk">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764178962324" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="do we need to generate a new child apk first">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764202221867" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="does she do everything else i designed her to do as well? like a parent decides they dont want their child on messenger they can toggle it off or back on and the safescope toggle blocks innapropriate sites and the location works so the parent knows where their child is?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764173962933" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="does the apk still monitor chats for signs of grooming, sexual predators and bullying?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764173284247" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="error permiission denied">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764200680845" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="error permission denied . . . i think a new mommastealth apk needs rebuilt and put into git\">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764203633207" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="got the error">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764204910379" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="how can we get a signed build?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764226888892" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="https://github.com/CoreyD84/mommastealth/releases/tag/v1 it does exist and this is the first time it hasnt worked in this aspect">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764200476054" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i actuall ran ./gradlew clean and it failed">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764195813194" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i cant get it to build me a new momma stealth apk it shows the one from earlier and i need the new one">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764196005825" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i copied pasted my keystore to the project here and still get Keystore file 'C:\AndroidProjects\MommaMobileReborn\daemon\8.13\&quot;C:\Users\glass\momma-keystore.jks&quot;' not found for signing config 'externalOverride'">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764276372077" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i didnt mean for you to explain what it did i meant there should be 2 seperate apks the guardian side and the child i need to put the child side in my github so when the guardian side produces the qr code and the child side scans it it can go ro that link and get downloaded to the childs phone">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764172172131" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i got permission denied again and i think i know why. the link has a guardian id attatched to it and i think ive downloaded the app so many times i never  get that id back so it denies permission. i feel like the link shouldnt have an actual id attatchwed to it otherwise everyone will always get permission denied. instead i feel like the guardian id should actually create upon the scanning of the qr. the qr should actually create the id link the child with tt and do a full layout gymnastics style and stick the landing. perfect 10's across the board">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764237174840" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i have 2 seperate phones, the one im using for guardian the other im using as the child device">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764203457702" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i have a keystore already">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764176157384" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i installed the app and it still has both qr codes and the one i need still says link expired or invalid">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764199912337" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i just ran ./gradlew :mommastealth:assembleRelease   to get a new release to drop into github but idk where it went because the one thats there was from earlier">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764179351894" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i just scanned the qr and it says link expired or invalid this token was not found or already used">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764198984713" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i need a new apk for github">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764207301348" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i opened the qr code and got an error about storing the token">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764200156861" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i seen the id but i dont have a photographic memory to tell you what it was and i dont get the permission denied error until i actually scan it and that is on the child side which is where the error is">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764201171780" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i signed in . . should i delete the guardian node in firebase and clear saved credentials and then create a new account?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764200978874" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i think part of the problem is that there are two qr codes in my project being generated the one we need which is in  the link child device tab and the other one is in another tab named linked. that tab and qr should be totally gone we only need the first one">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764199200194" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i thought we were working on  failed&#10;Download info&#10;:app:validateSigningRelease&#10;Keystore file 'C:\AndroidProjects\MommaMobileReborn\daemon\8.13\&quot;C:\Users\glass\momma-keystore.jks&quot;' not found for signing config 'externalOverride'&#10;:app:compileReleaseKotlin&#10;ChildLinkActivity.kt&#10;Annotation 'androidx.camera.core.ExperimentalGetImage' is not annotated with '@&lt;file_name&gt;&#10;RecentDetectionsActivities.kt&#10;'static field FLAG_FULLSCREEN: Int' is deprecated. Deprecated in Java.&#10;'static field FLAG_FULLSCREEN: Int' is deprecated. Deprecated in Java.">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764226732672" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="i&quot;C:\Users\glass\momma-keystore.jks&quot; is my keystore">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764207430768" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="iError saving rules - Line 24: Cannot have multiple '.write' rules.">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764201835679" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="if  you check out the consent built into the code it covers it i believe">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764174468671" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="im building it from studio">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764207562779" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="im going to delete  the guardian node from firebase">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764204121894" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="im still getting Keystore file 'C:\AndroidProjects\MommaMobileReborn\daemon\8.13\&quot;C:\Users\glass\momma-keystore.jks&quot;' not found for signing config 'externalOverride'">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764277720991" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="invalld link missing token or guardianid">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764275449986" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="is mommastealth-debug the apk i need to drop in my github repo?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764176045574" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="is that what this is">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="2.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764179030054" />
+                  <option value="1764179030032" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="is there any other app quite like it?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764174604417" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="is this safe to run Get-ChildItem -Path &quot;C:\Dev\MommaNettie_New&quot; -Force |&#10;Where-Object {&#10;    $_.Name -in @&lt;file_name&gt;&#10;} |&#10;Remove-Item -Recurse -Force">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764195727274" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="it opens a link to the download in github">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764205043950" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="it pops up as soon as i click on the link">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764205134097" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="it saved">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764202119498" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="it should install mommastealth on scan, right?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764198304111" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="it wont let me publish the rules becasue of line 24">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764201759884" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="its not going to try and read both of those links i see and crash will it?\">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764197843540" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="no but it can be">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764204146514" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="no its already set up. logically there will never be a child device that has the app installed  on their phone until they scan the qr code">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764198435608" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="now it gives invalld link missing token or guardianid">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764241310731" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="permission denied">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="2.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764206940452" />
+                  <option value="1764202285683" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="permission denied . . . since we changed tjhe rules do we need to do another update?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764206085083" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="same error">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764203858357" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="so it works like i designed it to?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764173787349" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="thank you for all your help, im in tears right now">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764178021909" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="the guardian app should definitley scan messages in real time on the childs phone for signs of emotional distress, thats what i basically built her for to detect predators and bullies before anything happens if that makes sense?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764173479334" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="the momma stealth apk i see in file explorer is from 6:55 and thats the one i have on git hub\">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764203555703" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="the one that is not connected wirelessly">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764204682015" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="the one your showing me is the one from earlier">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764179564488" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="there isnt a github pages site here error . .. thats weird because i drop the link in at the same place since the begging of my testing like maybe a week ago. i delete the old one and drop the new one in and now it doesnt work?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764200418637" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="theres one in the link child device tab and there is one in the linked tab so there are 2 qr codes one  each iin 2 seperate tabs">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764200016649" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="these other parental control apps are going to be so jealous, wont they">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764198526690" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="well since we just dropped the link into that file should we rebuild the guardian side before i install it so it doesnt direct the child device to a broken link?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764197936877" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="what about Nettie Takeover?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764174380219" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="what about mommastealth, the child side?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764171889087" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="what do you think i could get if i sold momma mobile out right to a company?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764177651685" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="what would you say i could charge for it?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764175051355" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="when i put the actual link to the apk into GenerateLinkQrActivity.kt it throws 7 errors">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764197731334" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="why is my project opening up in mobilenettierebuild_backup when im opening mommanettie_new?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764218065729" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="will these need updated?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764238470149" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="yayyyy that is such a wonderous feeling im excited ! It really was hard and strenuous work and im so thankful for you and copilot and gemini. I could have never of accomlished it alone. I also have a version of nettie that is designed for desktops, laptops but i like the mobile app so much more. i should probably develop an apple version also sometime in the future">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764177468378" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="yes please">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764199598211" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

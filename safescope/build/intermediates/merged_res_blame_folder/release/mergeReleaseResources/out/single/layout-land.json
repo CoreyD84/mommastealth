@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/layout-land/material_clock_period_toggle_land.xml",
+        "source": "com.airnettie.mobile.safescope-material-1.12.0-17:/layout-land/material_clock_period_toggle_land.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/layout-land/mtrl_picker_header_dialog.xml",
+        "source": "com.airnettie.mobile.safescope-material-1.12.0-17:/layout-land/mtrl_picker_header_dialog.xml"
+    },
+    {
+        "merged": "com.airnettie.mobile.safescope-release-3:/layout-land/material_timepicker.xml",
+        "source": "com.airnettie.mobile.safescope-material-1.12.0-17:/layout-land/material_timepicker.xml"
+    }
+]
