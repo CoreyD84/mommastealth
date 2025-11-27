@@ -9,6 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import java.text.DateFormat
 
@@ -24,32 +25,26 @@ fun LinkedChildrenTab(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     var children by remember { mutableStateOf<List<LinkedChild>>(emptyList()) }
 
-    val prefs = context.getSharedPreferences("nettie_prefs", Context.MODE_PRIVATE)
-    val guardianCode = prefs.getString("guardian_code", null)
+    val guardianId = FirebaseAuth.getInstance().currentUser?.uid
 
     // ✅ Load linked children
-    LaunchedEffect(Unit) {
-        if (guardianCode.isNullOrBlank()) {
+    LaunchedEffect(guardianId) {
+        if (guardianId == null) {
             children = emptyList()
             return@LaunchedEffect
         }
 
-        val ref = FirebaseDatabase.getInstance().getReference("guardianLinks/$guardianCode/children")
+        val ref = FirebaseDatabase.getInstance().getReference("guardianLinks/$guardianId/linkedChildren")
         ref.get().addOnSuccessListener { snapshot ->
-            val ids = snapshot.children.mapNotNull { it.key }
-
             val tempList = mutableListOf<LinkedChild>()
-            ids.forEach { childId ->
-                val childRef = FirebaseDatabase.getInstance().getReference("childProfiles/$childId")
-                childRef.get().addOnSuccessListener { childSnap ->
-                    val name = childSnap.child("name").getValue(String::class.java) ?: "Unnamed"
-                    val mood = childSnap.child("mood").getValue(String::class.java) ?: "unknown"
-                    val lastSeen = childSnap.child("lastSeen").getValue(Long::class.java) ?: 0L
-                    val isEscalated = childSnap.child("isEscalated").getValue(Boolean::class.java) ?: false
-                    tempList.add(LinkedChild(name, mood, lastSeen, isEscalated))
-                    children = tempList.sortedByDescending { it.lastSeen }
-                }
+            snapshot.children.forEach { childSnap ->
+                val name = childSnap.child("nickname").getValue(String::class.java) ?: "Unnamed"
+                val mood = childSnap.child("mood").getValue(String::class.java) ?: "unknown"
+                val lastSeen = childSnap.child("last_seen").getValue(Long::class.java) ?: 0L
+                val isEscalated = childSnap.child("isEscalated").getValue(Boolean::class.java) ?: false
+                tempList.add(LinkedChild(name, mood, lastSeen, isEscalated))
             }
+            children = tempList.sortedByDescending { it.lastSeen }
         }
     }
 

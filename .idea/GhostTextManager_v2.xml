@@ -279,6 +279,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="heres a pic of what it shows">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764283502437" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="how can we get a signed build?">
           <value>
             <GhostTextMetaData>
@@ -948,6 +960,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1764179564488" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="the scan worked and i granted all permissions but nothing is working. in my platforms tab none of the toggles work they dont even toggle anymore and the safescope toggle is completely gone and then at the bottom of the tab i use to have the consent box but its gone now. the linked tab doesnt even show a linked child which it should since i scanned the qr code. on the childs device i can see the app in the apps drawere and i shouldnt be able to because the child could just uninstall it if they wanted to and thats bad and potentially dangerous to their well being">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764283978956" />
                 </list>
               </option>
             </GhostTextMetaData>
