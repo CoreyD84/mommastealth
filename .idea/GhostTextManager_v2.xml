@@ -87,6 +87,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="PS C:\Dev\MommaNettie_New&gt; ./gradlew clean assembleRelease&#10;&#10;The Kotlin Gradle plugin was loaded multiple times in different subprojects, which is not supported and may break the build.&#10;This might happen in subprojects that apply the Kotlin plugins with the Gradle 'plugins { ... }' DSL if they specify explicit versions, even if the versions are equal.&#10;Please add the Kotlin plugin to the common parent project or the root project, then remove the versions in the subprojects.&#10;If the parent project does not need the plugin, add 'apply false' to the plugin line.&#10;See: https://docs.gradle.org/current/userguide/plugins.html#sec:subprojects_plugins_dsl&#10;The Kotlin plugin was loaded in the following projects: ':app', ':safescope'&#10;&gt; Task :app:clean FAILED&#10;&#10;FAILURE: Build failed with an exception.&#10;&#10;* What went wrong:&#10;Execution failed for task ':app:clean'.&#10;&gt; java.io.IOException: Unable to delete directory 'C:\Dev\MommaNettie_New\app\build'&#10;    Failed to delete some children. This might happen because a process has files open or has its working directory set in the target directory.&#10;    - C:\Dev\MommaNettie_New\app\build\intermediates\lint-cache\lintVitalAnalyzeRelease\migrated-jars\androidx.compose.runtime.lint.RuntimeIssueRegistry-4d851bea0bfaac9d..jar&#10;    - C:\Dev\MommaNettie_New\app\build\intermediates\lint-cache\lintVitalAnalyzeRelease\migrated-jars&#10;    - C:\Dev\MommaNettie_New\app\build\intermediates\lint-cache\lintVitalAnalyzeRelease&#10;    - C:\Dev\MommaNettie_New\app\build\intermediates\lint-cache&#10;    - C:\Dev\MommaNettie_New\app\build\intermediates&#10;&#10;* Try:&#10;&gt; Run with --stacktrace option to get the stack trace.&#10;&gt; Run with --info or --debug option to get more log output.&#10;&gt; Run with --scan to get full insights.&#10;&gt; Get more help at https://help.gradle.org.&#10;&#10;BUILD FAILED in 16s&#10;2 actionable tasks: 1 executed, 1 up-to-date&#10;0 was unexpected at this time.&#10;PS C:\Dev\MommaNettie_New&gt;">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764285226477" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="a new code i scan and it pops up when i click on the link i get fro scan">
           <value>
             <GhostTextMetaData>
@@ -839,6 +851,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1764241310731" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="now the linked tab has its qr code back in it and in the platforms tab the safescope has a spinning circle instead of a toggle and on the child phone it still shows the app in the app drawer">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764285047631" />
                 </list>
               </option>
             </GhostTextMetaData>
