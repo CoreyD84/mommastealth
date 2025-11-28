@@ -228,16 +228,22 @@
       setTimeout(() => {
         window.location.href = downloadUrl;
 
-        // After download starts, try to open the deep link
+        // Show instructions after download starts
         setTimeout(() => {
-          window.location.href = deepLinkUrl;
+          document.getElementById('loading').innerHTML = `
+            <h3>✅ Download Started!</h3>
+            <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin: 20px 0;">
+              <strong>⚠️ IMPORTANT:</strong>
+              <p style="margin: 10px 0;">After installing the app, you MUST click the button below to complete the setup.</p>
+              <p style="margin: 10px 0;"><strong>DO NOT</strong> open the app from your app drawer!</p>
+            </div>
+            <button onclick="window.location.href='${deepLinkUrl}'"
+                    style="margin-top: 20px; padding: 20px 40px; font-size: 18px; font-weight: bold; background: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+              ✅ Complete Setup (Click After Installing)
+            </button>
+            <p style="margin-top: 15px; font-size: 14px; color: #666;">This will link the device and hide the app icon.</p>
+          `;
         }, 2000);
-
-        // Reset UI
-        setTimeout(() => {
-          document.getElementById('loading').style.display = 'none';
-          document.getElementById('downloadBtn').style.display = 'inline-block';
-        }, 3000);
       }, 500);
     });
 
