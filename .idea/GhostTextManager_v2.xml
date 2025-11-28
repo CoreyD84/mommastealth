@@ -231,6 +231,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="can you update this and send back the whole thing?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764303451381" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="do we need to generate a new child apk first">
           <value>
             <GhostTextMetaData>
@@ -724,6 +736,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="it finally linked and shows in the dashboard it linked but its not working. . when i go to platform controls it fails to grant consent and gives a message that says it failled due to missing guatdian info. so that whole tab does not work. i dont feel like the location tab works because it shows the chlld device like 4 miles from here. i clicked on the recent tab and the app crashed">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764304030242" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="it is already coreyd84 i dont know where  you got the corevjk4 at you must have seen the pic wrong">
           <value>
             <GhostTextMetaData>
@@ -1004,9 +1028,10 @@
         <entry key="shouldnt i uninstall and start over?">
           <value>
             <GhostTextMetaData>
-              <option name="count" value="1.0" />
+              <option name="count" value="2.0" />
               <option name="timestamps">
                 <list>
+                  <option value="1764302734973" />
                   <option value="1764302061200" />
                 </list>
               </option>

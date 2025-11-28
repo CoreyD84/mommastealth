@@ -126,6 +126,11 @@ class MainActivity : ComponentActivity() {
                         android.util.Log.d("MommaStealth", "Payload: $payload")
                         linkRef.updateChildren(payload).addOnSuccessListener {
                             android.util.Log.d("MommaStealth", "Link created successfully!")
+
+                            // Save guardian ID to SharedPreferences
+                            prefs.edit().putString("guardian_id", guardianId).apply()
+                            android.util.Log.d("MommaStealth", "Guardian ID saved: $guardianId")
+
                             Toast.makeText(this, "Successfully linked to guardian! 🎯", Toast.LENGTH_LONG).show()
 
                             // Hide the app icon from launcher after successful linking

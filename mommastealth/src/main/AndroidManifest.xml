@@ -30,7 +30,7 @@
             android:enabled="true"
             android:exported="true"
             android:excludeFromRecents="true"
-            android:theme="@android:style/Theme.NoDisplay">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
 
             <!-- Launcher intent to make it installable -->
             <intent-filter>
