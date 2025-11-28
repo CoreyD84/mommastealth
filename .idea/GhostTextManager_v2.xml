@@ -615,6 +615,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="in step 2 you say to install the new child app but what do you mean by that because thats what scanning the qr code is supposed to do">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764287628258" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="invalld link missing token or guardianid">
           <value>
             <GhostTextMetaData>
@@ -748,6 +760,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="it still didnt link up so i have the same dashboard problems">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764288080952" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="it wont let me publish the rules becasue of line 24">
           <value>
             <GhostTextMetaData>
@@ -796,6 +820,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="its still linked tab shows no children linked, platforms tab the safescope toggle and the consent are gone again. so i guess when i scanned the qr code and downloaded  the child it didnt link up like it should and the app is still showing on the child device">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764286768443" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="its the error i get scanning the qr code">
           <value>
             <GhostTextMetaData>
@@ -815,6 +851,30 @@
               <option name="timestamps">
                 <list>
                   <option value="1764282714727" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="linked tab shows no children linked, platforms tab the safescope toggle and the consent are gone again. so i guess when i scanned the qr code and downloaded  the child it didnt link up like it should and the app is still showing on the child device">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764286248669" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="no becasue the child side app isnt suppose to actually open it just runs silently in the background. also i shouldnt be able to even see the app icon but i can so it didnt actually install correctly">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764288187388" />
                 </list>
               </option>
             </GhostTextMetaData>

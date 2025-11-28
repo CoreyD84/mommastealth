@@ -48,11 +48,10 @@
         const token = urlParams.get('token');
 
         if (token) {
-            // Store token for fallback
-            localStorage.setItem('nettie_token', token);
+            // Redirect to custom scheme deep link
+            window.location.href = `nettielink://child/link?token=${token}`;
 
-            // The deep link should be handled by the Android app automatically
-            // If we're still here after 3 seconds, show a message
+            // If we're still here after 2 seconds, show a message
             setTimeout(() => {
                 document.querySelector('.container').innerHTML = `
                     <h2>App Not Installed?</h2>
@@ -61,7 +60,7 @@
                         Go to download page
                     </a>
                 `;
-            }, 3000);
+            }, 2000);
         } else {
             document.querySelector('.container').innerHTML = `
                 <h2>Invalid Link</h2>
