@@ -31,8 +31,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         prefs = getSharedPreferences("nettie_prefs", MODE_PRIVATE)
 
+        // Log all intent information for debugging
+        android.util.Log.d("MommaStealth", "=== MainActivity onCreate ===")
+        android.util.Log.d("MommaStealth", "Intent action: ${intent?.action}")
+        android.util.Log.d("MommaStealth", "Intent data: ${intent?.data}")
+        android.util.Log.d("MommaStealth", "Intent data string: ${intent?.dataString}")
+
         val data: Uri? = intent?.data
         val token: String? = data?.getQueryParameter("token")
+        android.util.Log.d("MommaStealth", "Extracted token: $token")
         val childId: String = resolveChildId()
 
         prefs.edit {
@@ -153,6 +160,11 @@ class MainActivity : ComponentActivity() {
                 }
         } else {
             android.util.Log.d("MommaStealth", "No token found in deep link, skipping linking")
+            android.util.Log.d("MommaStealth", "Intent action: ${intent?.action}")
+            android.util.Log.d("MommaStealth", "Intent data: ${intent?.data}")
+            android.util.Log.d("MommaStealth", "Intent extras: ${intent?.extras}")
+
+            Toast.makeText(this, "No linking token found. Please scan the QR code to link this device.", Toast.LENGTH_LONG).show()
             requestLocationPermissions()
         }
     }

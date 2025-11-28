@@ -99,6 +99,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="When I go to open the app it gives me an error that pops up that no linking token found">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764299696221" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="a new code i scan and it pops up when i click on the link i get fro scan">
           <value>
             <GhostTextMetaData>
@@ -688,6 +700,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="it didnt work">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764295421588" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="it doesnt let me hit save when im at step 5 of your directions">
           <value>
             <GhostTextMetaData>
@@ -977,6 +1001,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="shouldnt i uninstall and start over?">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764302061200" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="so it works like i designed it to?">
           <value>
             <GhostTextMetaData>
@@ -984,6 +1020,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1764173787349" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="still the same thing as in the pic i sent. and the app did install the first time so this second time it just updated it">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764288824316" />
                 </list>
               </option>
             </GhostTextMetaData>
@@ -1097,6 +1145,30 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="this pic shows what happened after i went back to the web page and chlicked on the complete setup button">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764288687617" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="this time when i clicked complete setup i dont think anything happened because it is still on that same screen and i have no linked children">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764289174539" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="well since we just dropped the link into that file should we rebuild the guardian side before i install it so it doesnt direct the child device to a broken link?">
           <value>
             <GhostTextMetaData>
@@ -1133,6 +1205,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="what do you mean you dont see any mommastealth in there? heres like 8 of them 2025-11-27 22:47:27.288 20624-20624 MommaStealth            pid-20624                            D  === MainActivity onCreate ===&#10;2025-11-27 22:47:27.288 20624-20624 MommaStealth            pid-20624                            D  Intent action: android.intent.action.MAIN&#10;2025-11-27 22:47:27.288 20624-20624 MommaStealth            pid-20624                            D  Intent data: null&#10;2025-11-27 22:47:27.288 20624-20624 MommaStealth            pid-20624                            D  Intent data string: null&#10;2025-11-27 22:47:27.288 20624-20624 MommaStealth            pid-20624                            D  Extracted token: null&#10;2025-11-27 22:47:27.293 20624-20624 MommaStealth            pid-20624                            D  No token found in deep link, skipping linking&#10;2025-11-27 22:47:27.293 20624-20624 MommaStealth            pid-20624                            D  Intent action: android.intent.action.MAIN&#10;2025-11-27 22:47:27.293 20624-20624 MommaStealth            pid-20624                            D  Intent data: null&#10;2025-11-27 22:47:27.293 20624-20624 MommaStealth            pid-20624                            D  Intent extras: null">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764301888199" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="what do you think i could get if i sold momma mobile out right to a company?">
           <value>
             <GhostTextMetaData>
@@ -1164,6 +1248,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1764197731334" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="when i scanned it a browser opened with the link and i clicked it with downloaded the app and i installed it once it installed i  opened it and it gave me a location permission i granted it and then i went to device settings to turn on accessability and vpn the app icon is still visible in the app drawer and my guardian device shows no linked children">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1764295776316" />
                 </list>
               </option>
             </GhostTextMetaData>

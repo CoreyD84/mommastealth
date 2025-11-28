@@ -33,8 +33,7 @@ class GenerateLinkQrActivity : AppCompatActivity() {
         val expiresAt = timestamp + (15 * 60 * 1000) // Token expires in 15 minutes
 
         // ✅ Build deep link URL for QR payload (ONLY token - guardian link created on scan)
-        // Use custom scheme for direct app opening, with web fallback
-        val redirectUrl = "nettielink://child/link?token=$token&fallback=https://coreyd84.github.io/mommastealth/link/?token=$token"
+        val redirectUrl = "https://coreyd84.github.io/mommastealth/link/?token=$token"
 
         // ✅ Store token in Firebase with guardian info for later linking
         val tokenData = mapOf(
