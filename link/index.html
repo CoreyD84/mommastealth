@@ -228,44 +228,67 @@
       setTimeout(() => {
         window.location.href = downloadUrl;
 
-        // Store token in localStorage for the app to retrieve
-        localStorage.setItem('nettie_link_token', token);
-
-        // Show instructions after download starts
+        // Show instructions and auto-trigger deep link
         setTimeout(() => {
           document.getElementById('loading').innerHTML = `
             <h3>✅ Download Started!</h3>
             <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin: 20px 0;">
               <strong>📱 Setup Instructions:</strong>
               <ol style="text-align: left; margin: 10px 0 10px 20px;">
-                <li>After the APK finishes downloading, tap on it to install</li>
-                <li>After installation completes, tap "Open" (or open "Nettie Child" from your app drawer)</li>
-                <li>Grant all permissions when prompted</li>
-                <li>The app will link automatically and hide itself</li>
+                <li>Tap on the downloaded APK to install it</li>
+                <li>After installation, tap "Done" (NOT "Open")</li>
+                <li>Come back to this page and click the button below</li>
               </ol>
             </div>
-            <p style="margin-top: 15px; font-size: 14px; color: #666;">
-              The linking token has been saved. Just open the app once after installing.
-            </p>
+            <button id="linkBtn" onclick="tryOpenApp()"
+                    style="margin-top: 20px; padding: 20px 40px; font-size: 18px; font-weight: bold; background: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+              ✅ Link Device (Click After Installing)
+            </button>
+            <p id="status" style="margin-top: 15px; font-size: 14px; color: #666;"></p>
           `;
         }, 2000);
       }, 500);
     });
 
-    // If the app is already installed, try to open it directly
-    if (token) {
-      // Try to open the app via deep link
-      setTimeout(() => {
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = deepLinkUrl;
-        document.body.appendChild(iframe);
+    function tryOpenApp() {
+      const token = new URLSearchParams(window.location.search).get('token');
+      const deepLink = `nettielink://child/link?token=${token}`;
 
-        // If app doesn't open in 2 seconds, assume it's not installed
+      // Android intent URL format that browsers understand better
+      const intentUrl = `intent://child/link?token=${token}#Intent;scheme=nettielink;package=com.airnettie.mobile.child.mommastealth;end`;
+
+      document.getElementById('status').textContent = 'Attempting to open app...';
+      document.getElementById('linkBtn').disabled = true;
+
+      // Try multiple methods
+      let attempts = 0;
+      const maxAttempts = 5;
+
+      const tryOpen = () => {
+        attempts++;
+
+        // Method 1: Try Android intent URL (works best in Chrome/Android browsers)
+        window.location.href = intentUrl;
+
+        // Method 2: Fallback to custom scheme
         setTimeout(() => {
-          document.body.removeChild(iframe);
-        }, 2000);
-      }, 1000);
+          window.location.href = deepLink;
+        }, 500);
+
+        if (attempts < maxAttempts) {
+          document.getElementById('status').textContent = `Attempt ${attempts}/${maxAttempts}... If app doesn't open, make sure it's installed.`;
+          setTimeout(tryOpen, 2000);
+        } else {
+          document.getElementById('status').innerHTML = `
+            <strong style="color: #dc3545;">App didn't open?</strong><br>
+            Make sure the app is installed, then try clicking the button again.<br>
+            Or manually open "Nettie Child" from your app drawer.
+          `;
+          document.getElementById('linkBtn').disabled = false;
+        }
+      };
+
+      tryOpen();
     }
   </script>
 </body>
