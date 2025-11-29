@@ -30,6 +30,7 @@ fun PlatformControlTab(modifier: Modifier = Modifier) {
         val currentTip = remember { mutableStateOf("📄 Share stories of online safety wins...") }
 
         // ✅ Fetch the dynamically linked childId from Firebase
+        @Suppress("ProduceStateDoesNotAssignValue")
         val childId by produceState<String?>(initialValue = null) {
             val guardianId = FirebaseAuth.getInstance().currentUser?.uid
             if (guardianId == null) {

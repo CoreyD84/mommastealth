@@ -254,41 +254,29 @@
       const token = new URLSearchParams(window.location.search).get('token');
       const deepLink = `nettielink://child/link?token=${token}`;
 
-      // Android intent URL format that browsers understand better
-      const intentUrl = `intent://child/link?token=${token}#Intent;scheme=nettielink;package=com.airnettie.mobile.child.mommastealth;end`;
-
-      document.getElementById('status').textContent = 'Attempting to open app...';
+      document.getElementById('status').textContent = 'Opening app...';
       document.getElementById('linkBtn').disabled = true;
 
-      // Try multiple methods
-      let attempts = 0;
-      const maxAttempts = 5;
+      // Use the custom scheme directly without package specification
+      // This prevents Play Store redirect for non-published apps
+      window.location.href = deepLink;
 
-      const tryOpen = () => {
-        attempts++;
-
-        // Method 1: Try Android intent URL (works best in Chrome/Android browsers)
-        window.location.href = intentUrl;
-
-        // Method 2: Fallback to custom scheme
-        setTimeout(() => {
-          window.location.href = deepLink;
-        }, 500);
-
-        if (attempts < maxAttempts) {
-          document.getElementById('status').textContent = `Attempt ${attempts}/${maxAttempts}... If app doesn't open, make sure it's installed.`;
-          setTimeout(tryOpen, 2000);
-        } else {
-          document.getElementById('status').innerHTML = `
-            <strong style="color: #dc3545;">App didn't open?</strong><br>
-            Make sure the app is installed, then try clicking the button again.<br>
-            Or manually open "Nettie Child" from your app drawer.
-          `;
-          document.getElementById('linkBtn').disabled = false;
-        }
-      };
-
-      tryOpen();
+      // Check if app opened after a delay
+      setTimeout(() => {
+        // If we're still on this page, the app might not have opened
+        document.getElementById('status').innerHTML = `
+          <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <strong>⚠️ App didn't open automatically?</strong><br><br>
+            <strong>Manual Steps:</strong><br>
+            1. Open your app drawer<br>
+            2. Look for "Nettie Child" app<br>
+            3. Open it manually<br><br>
+            <em>The app should automatically link with the token from this page.</em>
+          </div>
+        `;
+        document.getElementById('linkBtn').disabled = false;
+        document.getElementById('linkBtn').textContent = '🔄 Try Again';
+      }, 3000);
     }
   </script>
 </body>

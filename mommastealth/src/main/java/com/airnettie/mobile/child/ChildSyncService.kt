@@ -87,12 +87,25 @@ class ChildSyncService : Service() {
                 val isEnabled = snapshot.getValue(Boolean::class.java) ?: false
                 Log.d(TAG, "SafeScope toggle changed to: $isEnabled")
 
-                val vpnIntent = Intent(this@ChildSyncService, SafeScopeVpnService::class.java)
                 if (isEnabled) {
-                    Log.d(TAG, "Starting SafeScopeVpnService")
-                    startService(vpnIntent)
+                    Log.d(TAG, "Requesting VPN permission and starting SafeScopeVpnService")
+                    // Check if VPN permission is already granted
+                    val prepareIntent = android.net.VpnService.prepare(this@ChildSyncService)
+                    if (prepareIntent == null) {
+                        // Permission already granted, start VPN
+                        val vpnIntent = Intent(this@ChildSyncService, SafeScopeVpnService::class.java)
+                        startService(vpnIntent)
+                        Log.d(TAG, "SafeScopeVpnService started (permission already granted)")
+                    } else {
+                        // Permission needed - launch VpnPermissionActivity to request it
+                        Log.w(TAG, "VPN permission not granted. Launching VpnPermissionActivity.")
+                        val permissionIntent = Intent(this@ChildSyncService, VpnPermissionActivity::class.java)
+                        permissionIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(permissionIntent)
+                    }
                 } else {
                     Log.d(TAG, "Stopping SafeScopeVpnService")
+                    val vpnIntent = Intent(this@ChildSyncService, SafeScopeVpnService::class.java)
                     stopService(vpnIntent)
                 }
             }

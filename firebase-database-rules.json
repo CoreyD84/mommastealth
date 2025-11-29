@@ -1,5 +1,10 @@
 {
   "rules": {
+    // ========================================
+    // ROOT LEVEL - Allow reading emotional patterns
+    // ========================================
+    ".read": "auth != null",  // Allow authenticated users to read root (for emotional patterns)
+    ".write": false,  // Prevent writing to root
 
     // ========================================
     // LINKING TOKENS - One-time tokens for QR code linking
@@ -236,8 +241,8 @@
         ".write": "auth != null && auth.uid == $guardianId",
         "consent": {
           "$childId": {
-            ".read": "auth != null && auth.uid == $guardianId",
-            ".write": "auth != null && auth.uid == $guardianId"
+            ".read": "auth != null",  // Allow any authenticated user to read
+            ".write": "auth != null"  // Allow any authenticated user to write (guardian uses their UID, child uses anonymous)
           }
         }
       }

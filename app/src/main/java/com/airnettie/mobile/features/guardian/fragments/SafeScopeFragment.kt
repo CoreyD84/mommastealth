@@ -23,6 +23,7 @@ class SafeScopeFragment : Fragment() {
             setContent {
                 val guardianId = FirebaseAuth.getInstance().currentUser?.uid
 
+                @Suppress("ProduceStateDoesNotAssignValue")
                 val childId by produceState<String?>(initialValue = null, guardianId) {
                     if (guardianId == null) {
                         value = null

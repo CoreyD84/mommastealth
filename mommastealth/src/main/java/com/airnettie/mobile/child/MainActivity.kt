@@ -133,17 +133,31 @@ class MainActivity : ComponentActivity() {
 
                             Toast.makeText(this, "Successfully linked to guardian! 🎯", Toast.LENGTH_LONG).show()
 
-                            // Hide the app icon from launcher after successful linking
+                            // Re-enable MainActivity temporarily for deep link, then disable it again
                             try {
                                 val componentName = android.content.ComponentName(this, MainActivity::class.java)
                                 packageManager.setComponentEnabledSetting(
                                     componentName,
-                                    android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                                    android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                                     android.content.pm.PackageManager.DONT_KILL_APP
                                 )
-                                android.util.Log.d("MommaStealth", "App icon hidden from launcher")
+                                android.util.Log.d("MommaStealth", "MainActivity enabled for deep link")
+
+                                // Schedule to disable it after a short delay
+                                android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                                    try {
+                                        packageManager.setComponentEnabledSetting(
+                                            componentName,
+                                            android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                                            android.content.pm.PackageManager.DONT_KILL_APP
+                                        )
+                                        android.util.Log.d("MommaStealth", "App icon hidden from launcher")
+                                    } catch (e: Exception) {
+                                        android.util.Log.e("MommaStealth", "Failed to hide app icon", e)
+                                    }
+                                }, 1000) // Wait 1 second before hiding
                             } catch (e: Exception) {
-                                android.util.Log.e("MommaStealth", "Failed to hide app icon", e)
+                                android.util.Log.e("MommaStealth", "Failed to manage app icon visibility", e)
                             }
 
                             requestLocationPermissions()
